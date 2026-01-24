@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ishita Rai ✦ Software Engineer (Summer 2026)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio for Ishita Rai — Software Engineer seeking Summer 2026 internships." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg:#070611;        /* solid background (no gradients) */
+      --bg-elev:#0c0b16;   /* elevated */
+      --bg-card:#0f0e1b;   /* card */
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.62);
+      --faint: rgba(255,255,255,0.45);
+
+      --border: rgba(255,255,255,0.10);
+
+      /* professional pops */
+      --a1:#a9a6ff; /* lavender */
+      --a2:#45e3ff; /* cyan */
+      --a3:#ffc857; /* warm */
+      --good:#23c552;
+
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-pill: 999px;
+
+      --shadow-soft: 0 18px 45px rgba(0,0,0,0.50);
+      --shadow-card: 0 14px 30px rgba(0,0,0,0.38);
+
+      --max: 1120px;
+      --nav-h: 72px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      background: var(--bg); /* ✅ gradients removed */
+      color:var(--text);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .wrapper{
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:18px 18px 72px;
+    }
+
+    /* ---------- STICKY NAV ---------- */
+    .nav-shell{
+      position:sticky;
+      top:0;
+      z-index:30;
+      backdrop-filter: blur(14px);
+      background: rgba(7,6,17,0.78);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      min-height: var(--nav-h);
+    }
+
+    .nav-left{display:flex;align-items:center;gap:12px;min-width:280px}
+    .nav-logo{
+      height:38px;width:38px;border-radius:14px;
+      background: linear-gradient(135deg, rgba(169,166,255,0.55), rgba(69,227,255,0.40));
+      border:1px solid rgba(255,255,255,0.14);
+      display:grid;place-items:center;
+      font-weight:900;
+      letter-spacing:0.02em;
+      color:rgba(255,255,255,0.92);
+      box-shadow:0 10px 22px rgba(0,0,0,0.35);
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      flex:0 0 auto;
+    }
+    .nav-title{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+    .nav-title strong{
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      font-size:16px;font-weight:900;letter-spacing:-0.01em;
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+    .nav-title span{
+      font-size:13px;color:var(--muted);
+      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    }
+
+    .nav-right{
+      display:flex;align-items:center;justify-content:flex-end;
+      gap:10px;min-width:360px;flex-wrap:wrap;
+    }
+
+    .status-pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      font-size:13px;color:rgba(255,255,255,0.78);
+      white-space:nowrap;
+    }
+    .dot{width:8px;height:8px;border-radius:999px;background:var(--good);box-shadow:0 0 10px rgba(35,197,82,0.75)}
+
+    .nav-links{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .nav-link{
+      padding:8px 12px;border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      font-size:13px;color:rgba(255,255,255,0.86);
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .nav-link:hover{transform:translateY(-1px);background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.18)}
+
+    @media (max-width:980px){
+      .nav-left{min-width:0}
+      .nav-right{min-width:0}
+      .status-pill{display:none}
+    }
+    @media (max-width:620px){
+      :root{--nav-h:104px}
+      .nav{flex-direction:column;align-items:stretch}
+      .nav-right{justify-content:flex-start}
+      .nav-title strong,.nav-title span{white-space:normal}
+    }
+
+    /* anchor offset */
+    section[id]{scroll-margin-top: calc(var(--nav-h) + 16px);}
+
+    /* ---------- HERO ---------- */
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+      gap:16px;
+      align-items:stretch;
+    }
+    @media (max-width:980px){ .hero{grid-template-columns:1fr} }
+
+    .panel, .summary, .card, .project-card{
+      position:relative;
+      border-radius:var(--radius-lg);
+      background: rgba(255,255,255,0.035);
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow:var(--shadow-soft);
+      overflow:hidden;
+    }
+
+    /* ✅ NO background gradients — just a clean top sheen + subtle edge */
+    .panel::after, .summary::after, .card::after, .project-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius: inherit;
+      pointer-events:none;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent 40%);
+      opacity:1;
+    }
+
+    .panel-body{position:relative;z-index:1;padding:18px 18px 16px}
+    .summary-body{position:relative;z-index:1;padding:16px 16px 14px}
+
+    .eyebrow{
+      font-size:12px;text-transform:uppercase;letter-spacing:0.14em;
+      color:var(--muted);margin-bottom:8px;
+    }
+    .hero h1{
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      font-size:clamp(28px,3.6vw,44px);
+      line-height:1.08;
+      letter-spacing:-0.02em;
+      margin-bottom:10px;
+    }
+    .grad{
+      background:linear-gradient(120deg,var(--a1),var(--a2));
+      -webkit-background-clip:text;color:transparent;
+    }
+    .sub{color:rgba(255,255,255,0.72);font-size:15px;max-width:60ch}
+
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+    .tag{
+      padding:8px 10px;border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      font-size:12px;color:rgba(255,255,255,0.78);
+      white-space:nowrap;
+    }
+    .tag.accent{border-color:rgba(169,166,255,0.34);background:rgba(169,166,255,0.08)}
+    .tag.cyan{border-color:rgba(69,227,255,0.30);background:rgba(69,227,255,0.07)}
+
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color:rgba(255,255,255,0.90);
+      font-size:14px;font-weight:700;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.18)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(169,166,255,0.70), rgba(69,227,255,0.48));
+      border-color: rgba(255,255,255,0.16);
+      color:#060512;
+    }
+    .note{margin-top:10px;font-size:13px;color:var(--faint)}
+
+    /* Summary */
+    .summary-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      color:rgba(255,255,255,0.75);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .spark{
+      width:9px;height:9px;border-radius:999px;
+      background:linear-gradient(135deg,var(--a1),var(--a2));
+      box-shadow:0 0 0 4px rgba(169,166,255,0.10);
+    }
+    .avatar{
+      width:56px;height:56px;border-radius:16px;
+      background: linear-gradient(135deg, rgba(169,166,255,0.55), rgba(69,227,255,0.40));
+      padding:2px;
+      box-shadow:0 14px 30px rgba(0,0,0,0.50);
+      flex:0 0 auto;
+    }
+    .avatar-inner{
+      width:100%;height:100%;border-radius:inherit;
+      background: rgba(7,6,17,0.75);
+      display:grid;place-items:center;
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      font-weight:900;font-size:22px;
+      color:rgba(255,255,255,0.92);
+      border:1px solid rgba(255,255,255,0.10);
+    }
+
+    .summary-name{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:900;letter-spacing:-0.01em;font-size:18px}
+    .summary-meta{margin-top:4px;color:var(--muted);font-size:13px}
+
+    .kpi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+    .kpi{
+      border-radius:14px;
+      padding:10px;
+      background: rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.10);
+    }
+    .kpi .num{
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      font-weight:900;letter-spacing:-0.02em;
+      font-size:17px;margin-bottom:3px;
+      color: rgba(255,255,255,0.92);
+    }
+    .kpi .lbl{color:var(--muted);font-size:12px;line-height:1.25}
+
+    .summary-bio{
+      margin-top:12px;font-size:13px;color:rgba(255,255,255,0.78);
+      padding-top:12px;border-top:1px solid rgba(255,255,255,0.10);
+    }
+    .summary-bio strong{color:rgba(255,255,255,0.96);font-weight:750}
+
+    /* ---------- SECTIONS ---------- */
+    .section{margin-top:34px}
+    .section-header{
+      display:grid;
+      grid-template-columns:1fr minmax(280px,520px);
+      gap:12px 22px;
+      align-items:start;
+      margin-bottom:14px;
+    }
+    .section-title{
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      font-size:20px;font-weight:900;
+      letter-spacing:-0.01em;
+    }
+    .section-subtitle{
+      color:var(--muted);
+      font-size:14px;line-height:1.45;
+      justify-self:end;
+    }
+    @media (max-width:900px){
+      .section-header{grid-template-columns:1fr}
+      .section-subtitle{justify-self:start}
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+      gap:14px;
+    }
+    @media (max-width:900px){ .grid-2{grid-template-columns:1fr} }
+
+    .card{padding:14px}
+    .label{
+      font-size:12px;text-transform:uppercase;letter-spacing:0.14em;
+      color:var(--muted);margin-bottom:6px;
+    }
+    .card h3{
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      font-size:16px;font-weight:850;margin-bottom:8px;
+    }
+    .list{list-style:none;margin-top:8px}
+    .list li{
+      padding-left:16px;position:relative;margin-bottom:8px;
+      font-size:14px;color:rgba(255,255,255,0.74);
+      overflow-wrap:anywhere;
+    }
+    .list li::before{
+      content:"•";position:absolute;left:0;top:1px;
+      color:var(--a3);font-size:16px;line-height:1;
+    }
+
+    /* Projects */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width:1024px){ .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+    @media (max-width:720px){ .projects-grid{grid-template-columns:1fr} }
+
+    .project-card{padding:14px;display:flex;flex-direction:column;gap:8px;min-height:260px}
+    .project-pill{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;color:var(--muted);
+      text-transform:uppercase;letter-spacing:0.14em;
+    }
+    .project-dot{
+      width:8px;height:8px;border-radius:999px;
+      background:linear-gradient(135deg,var(--a1),var(--a2));
+      box-shadow:0 0 0 4px rgba(69,227,255,0.06);
+    }
+    .project-title{
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      font-size:16px;font-weight:900;letter-spacing:-0.01em;
+      margin-top:2px;
+    }
+    .project-body{
+      color:rgba(255,255,255,0.72);
+      font-size:14px;line-height:1.5;
+    }
+    .project-tags{
+      margin-top:auto;padding-top:10px;
+      display:flex;flex-wrap:wrap;gap:8px;
+    }
+    .project-tag{
+      padding:7px 10px;border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      font-size:12px;color:rgba(255,255,255,0.72);
+      white-space:nowrap;
+    }
+
+    /* CTA */
+    .cta{
+      margin-top:34px;
+      border-radius:30px;
+      padding:16px;
+      background: rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 18px 40px rgba(0,0,0,0.55);
+      display:grid;
+      grid-template-columns:minmax(0,1.6fr) minmax(0,1.1fr);
+      gap:14px;
+      align-items:center;
+    }
+    @media (max-width:860px){ .cta{grid-template-columns:1fr} }
+    .cta h2{
+      font-family:"Space Grotesk",system-ui,sans-serif;
+      font-size:20px;font-weight:900;margin-bottom:6px;
+    }
+    .cta p{color:rgba(255,255,255,0.78);font-size:14px}
+    .cta small{display:block;margin-top:10px;color:var(--muted);font-size:13px}
+
+    .cta-right{display:flex;flex-direction:column;gap:10px;align-items:flex-start;justify-content:center}
+    .cta-row{width:100%;display:flex;flex-wrap:wrap;gap:8px}
+    .cta-chip{
+      padding:8px 12px;border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      font-size:12px;color:rgba(255,255,255,0.78);
+      display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+    }
+    .cta-links{width:100%;display:flex;flex-wrap:wrap;gap:10px}
+    .cta-link{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:var(--radius-pill);
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      font-size:13px;color:rgba(255,255,255,0.88);
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .cta-link:hover{transform:translateY(-1px);background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.18)}
+
+    @media (prefers-reduced-motion: reduce){
+      .nav-link:hover,.btn:hover,.cta-link:hover{transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-shell">
+    <header class="nav">
+      <div class="nav-left">
+        <div class="nav-logo">IR</div>
+        <div class="nav-title">
+          <strong>Ishita Rai</strong>
+          <span>Software Engineer · Summer 2026 Internship Candidate</span>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="status-pill">
+          <span class="dot"></span>
+          <span>Open to Summer 2026 SDE roles</span>
+        </div>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <main class="wrapper">
+
+    <section class="hero" id="top">
+      <article class="panel">
+        <div class="panel-body">
+          <div class="eyebrow">Portfolio</div>
+          <h1>Hi, I’m <span class="grad">Ishita</span> — I build scalable, reliable product experiences.</h1>
+          <p class="sub">
+            Former Software Engineer at JPMorgan Chase and current M.S. CS student at UPenn (’27).
+            I ship production features end-to-end (design → build → deploy → operate), with strong attention to performance,
+            observability, and clean UX.
+          </p>
+
+          <div class="tags">
+            <span class="tag accent">Full-stack engineering</span>
+            <span class="tag cyan">Distributed systems & data</span>
+            <span class="tag">Machine Learning / Computer Vision</span>
+            <span class="tag">2+ years industry experience</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn primary" href="https://docs.google.com/document/d/1h9-FP9zZjuzhKTXUxvQMsmFMIAbNrXZzM5V_nqr5_RU/edit?tab=t.0" target="_blank" rel="noopener">
+              Resume <span aria-hidden="true">↗</span>
+            </a>
+            <a class="btn" href="mailto:ishitar@seas.upenn.edu?subject=Summer%202026%20Internship%20-%20Ishita%20Rai">
+              Email <span aria-hidden="true">↗</span>
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/rai-ishita/" target="_blank" rel="noopener">
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="note">Philadelphia, PA · Open to US locations · Availability: May/June–Aug 2026</div>
+        </div>
+      </article>
+
+      <aside class="summary" aria-label="Highlights">
+        <div class="summary-body">
+          <div class="summary-top">
+            <div class="badge"><span class="spark"></span><span>Impact highlights</span></div>
+            <div class="avatar"><div class="avatar-inner">I</div></div>
+          </div>
+
+          <div class="summary-name">Ishita Rai</div>
+          <div class="summary-meta">Ownership-minded engineering: ship, measure, and operate in production.</div>
+
+          <div class="kpi-grid">
+            <div class="kpi">
+              <div class="num">500+ users</div>
+              <div class="lbl">React + Flask + GraphQL platform adopted across teams</div>
+            </div>
+            <div class="kpi">
+              <div class="num">96% faster load</div>
+              <div class="lbl">Legacy UI modernization → OpenFin micro-frontends</div>
+            </div>
+            <div class="kpi">
+              <div class="num">90% faster workflow</div>
+              <div class="lbl">Middle-office data update turnaround improvement</div>
+            </div>
+            <div class="kpi">
+              <div class="num">Compliance-safe</div>
+              <div class="lbl">Audit trails + automated notifications in production flows</div>
+            </div>
+          </div>
+
+          <div class="summary-bio">
+            Looking for an internship where I can contribute to <strong>customer-facing features</strong>,
+            collaborate in an <strong>agile</strong> environment, and ship code that is <strong>tested, monitored, and reliable</strong>.
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-header">
+        <div class="section-title">Work</div>
+        <div class="section-subtitle">
+          Production engineering experience: UI modernization, services, reliability, and compliance-critical workflows.
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="label">JPMorgan Chase</div>
+          <h3>Software Engineer · Aug 2023 – Aug 2025</h3>
+          <ul class="list">
+            <li>Led a React + Flask + GraphQL platform used by <strong>500+ users</strong>, cutting data update turnaround by <strong>90%</strong>.</li>
+            <li>Modernized a compliance-critical workflow with <strong>audit trails</strong> + automated notifications → <strong>100% adherence</strong>.</li>
+            <li>Migrated a legacy trade update system to OpenFin micro-frontends → <strong>96%</strong> faster load & <strong>100%</strong> adoption.</li>
+            <li>Built Java microservices supporting high-throughput FX e-trading algorithmic executions.</li>
+          </ul>
+          <div class="tags" style="margin-top:12px;">
+            <span class="tag accent">React</span><span class="tag">TypeScript</span><span class="tag">GraphQL</span>
+            <span class="tag">Flask</span><span class="tag">Java</span><span class="tag">OpenFin</span>
+            <span class="tag">Splunk</span><span class="tag">Jenkins</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="label">JPMorgan Chase</div>
+          <h3>Software Engineering Intern · Jun 2022 – Jul 2022</h3>
+          <ul class="list">
+            <li>Deployed a Flask microservice dependency visualization tool, reducing production root-cause analysis time by <strong>80%</strong>.</li>
+            <li>Built a Hugging Face–powered FAQ chatbot; improved response accuracy via retrieval + prompt iteration.</li>
+          </ul>
+          <div class="tags" style="margin-top:12px;">
+            <span class="tag cyan">Python</span><span class="tag">Flask</span><span class="tag">RAG</span><span class="tag">Debugging</span>
+          </div>
+
+          <div style="height:12px;"></div>
+
+          <div class="label">KJ Somaiya</div>
+          <h3>Text Analytics Intern · Feb 2020 – May 2021</h3>
+          <ul class="list">
+            <li>Preprocessed/annotated <strong>100K+</strong> samples using CoreNLP / NLTK / spaCy for machine reading comprehension research.</li>
+            <li>Modeled semantic relations among predicates; supported an IEEE publication on predicate identification & extraction.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-header">
+        <div class="section-title">Projects</div>
+        <div class="section-subtitle">
+          Comprehensive set: graphs, vision, mobile + recsys, NLP, and production engineering.
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-pill"><span class="project-dot"></span> Vision · OCR · UX</div>
+          <div class="project-title">VisionNotes — Notes & Math to LaTeX</div>
+          <div class="project-body">
+            Computer vision + OCR pipeline that segments handwritten notes into logical regions, separates math vs. text,
+            and generates clean LaTeX outputs. Focused on robust preprocessing and UX-aware structure.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">PyTorch</span><span class="project-tag">OpenCV</span><span class="project-tag">Segmentation</span>
+            <span class="project-tag">OCR</span><span class="project-tag">Structured output</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-pill"><span class="project-dot"></span> Mobile · Recommendations</div>
+          <div class="project-title">Kloris — PlantCare Mobile App</div>
+          <div class="project-body">
+            Full-stack React Native app with reminders and camera + GPS signals. Implemented clustering-based recommendations
+            to personalize plant suggestions and improve retention through contextual guidance.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">React Native</span><span class="project-tag">Flask</span><span class="project-tag">Clustering</span>
+            <span class="project-tag">Camera</span><span class="project-tag">GPS</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-pill"><span class="project-dot"></span> Graph ML · Scale</div>
+          <div class="project-title">Community Detection in Heterogeneous Graphs</div>
+          <div class="project-body">
+            Built a graph reduction pipeline for a 40M-edge heterogeneous dataset and trained an HGT model for community detection,
+            achieving strong accuracy while keeping training feasible.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">HGT</span><span class="project-tag">PyTorch</span><span class="project-tag">Large-scale graphs</span>
+            <span class="project-tag">Pipelines</span><span class="project-tag">Clustering</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-pill"><span class="project-dot"></span> Production · Performance</div>
+          <div class="project-title">Trading UIs & Workflow Automation</div>
+          <div class="project-body">
+            Owned a React + Flask + GraphQL system that automated production data changes and modernized compliance-critical workflows
+            with auditability and zero lapses. Focus: reliability, speed, and safe operations.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">React</span><span class="project-tag">GraphQL</span><span class="project-tag">Java</span>
+            <span class="project-tag">Observability</span><span class="project-tag">Compliance</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-pill"><span class="project-dot"></span> NLP · Search</div>
+          <div class="project-title">COVID Information Chatbot</div>
+          <div class="project-body">
+            Built an NLP chatbot surfacing trustworthy information using fuzzy matching, k-means clustering,
+            and custom relevance scoring with clear UX constraints and response structure.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">NLP</span><span class="project-tag">Search & Ranking</span><span class="project-tag">Clustering</span>
+            <span class="project-tag">Python</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-pill"><span class="project-dot"></span> Leadership · Community</div>
+          <div class="project-title">Leadership</div>
+          <div class="project-body">
+            VP Social Media/Outreach for Penn’s Pan-Asian GSA.
+            Advocacy Committee for Penn Society of Women Engineers.
+            Python Instructor Grades 3 to 8.
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Mentorship</span><span class="project-tag">Communication</span><span class="project-tag">Execution</span>
+            <span class="project-tag">Community</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-header">
+        <div class="section-title">Skills</div>
+        <div class="section-subtitle">
+          Practical toolset for SDE internships: shipping production code, systems thinking, and measurable execution.
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="label">Languages & Frameworks</div>
+          <h3>Strongest first</h3>
+          <div class="tags" style="margin-top:10px;">
+            <span class="tag accent">Python</span>
+            <span class="tag accent">Java</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">SQL</span>
+            <span class="tag cyan">React</span>
+            <span class="tag">React Native</span>
+            <span class="tag">Flask</span>
+            <span class="tag">Spring</span>
+            <span class="tag">GraphQL</span>
+            <span class="tag">OpenFin</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="label">ML / Data / Ops</div>
+          <h3>Ship + observe</h3>
+          <ul class="list">
+            <li><strong>ML:</strong> PyTorch, TensorFlow, OpenCV; evaluation and iteration.</li>
+            <li><strong>Data:</strong> pipelines, clustering, ranking, large dataset handling.</li>
+            <li><strong>Ops:</strong> CI/CD, debugging in production, monitoring (Splunk), reliable releases.</li>
+            <li><strong>Collaboration:</strong> code reviews, documentation, stakeholder communication.</li>
+          </ul>
+          <div class="tags" style="margin-top:10px;">
+            <span class="tag">Jenkins</span>
+            <span class="tag">Splunk</span>
+            <span class="tag">Git</span>
+            <span class="tag">Jira</span>
+            <span class="tag">AWS (fundamentals)</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div>
+        <h2>Let’s build something customers love.</h2>
+        <p>
+          I’m seeking a Summer 2026 SDE internship where I can contribute to high-impact features and own my work end-to-end
+          with strong engineering standards.
+        </p>
+        <small>Email: ishitar@seas.upenn.edu · LinkedIn: linkedin.com/in/rai-ishita</small>
+      </div>
+
+      <div class="cta-right">
+        <div class="cta-row">
+          <div class="cta-chip">📍 Philadelphia · open to US</div>
+          <div class="cta-chip">🎓 UPenn M.S. CS ’27</div>
+          <div class="cta-chip">💼 ex-JPMorgan SWE</div>
+        </div>
+        <div class="cta-links">
+          <a class="cta-link" href="mailto:ishitar@seas.upenn.edu?subject=Summer%202026%20Internship%20-%20Ishita%20Rai">Email <span aria-hidden="true">↗</span></a>
+          <a class="cta-link" href="https://www.linkedin.com/in/rai-ishita/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="cta-link" href="https://docs.google.com/document/d/1-CD-v8mffOrF-1elQjVX2ZK5PaiP7YiiL2BTVuke7_s/edit?tab=t.0" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
