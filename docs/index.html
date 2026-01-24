@@ -421,6 +421,24 @@
     @media (prefers-reduced-motion: reduce){
       .nav-link:hover,.btn:hover,.cta-link:hover{transform:none}
     }
+    /* --- CLICK SAFETY OVERRIDES --- */
+.panel::before, .panel::after,
+.summary::before, .summary::after,
+.card::before, .card::after,
+.project-card::before, .project-card::after,
+.cta::before, .cta::after {
+  pointer-events: none !important;
+}
+
+.actions a,
+.cta-links a,
+.nav a,
+.btn,
+.cta-link {
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+}
   </style>
 </head>
 
@@ -471,10 +489,10 @@
           </div>
 
           <div class="actions">
-            <a class="btn primary" href="https://docs.google.com/document/d/1h9-FP9zZjuzhKTXUxvQMsmFMIAbNrXZzM5V_nqr5_RU/edit?tab=t.0" target="_blank" rel="noopener">
+            <a class="btn primary" href="https://docs.google.com/document/d/1-CD-v8mffOrF-1elQjVX2ZK5PaiP7YiiL2BTVuke7_s/edit?tab=t.0" target="_blank" rel="noopener">
               Resume <span aria-hidden="true">↗</span>
             </a>
-            <a class="btn" href="mailto:ishitar@seas.upenn.edu?subject=Summer%202026%20Internship%20-%20Ishita%20Rai">
+            <a class="btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=ishitar@seas.upenn.edu&su=Summer%20Intern%20(Summer%202026)%20-%20Ishita%20Rai">
               Email <span aria-hidden="true">↗</span>
             </a>
             <a class="btn" href="https://www.linkedin.com/in/rai-ishita/" target="_blank" rel="noopener">
