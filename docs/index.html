@@ -6,7 +6,7 @@
   <title>Ishita Rai | AI Engineer, HCI, Production Systems</title>
   <meta
     name="description"
-    content="Portfolio for Ishita Rai, an AI engineer and Penn CIS graduate student building human-centered intelligent systems with production engineering discipline."
+    content="Portfolio for Ishita Rai, an AI engineer and Penn CIS graduate student building LLM, ML, and human-centered AI products with production engineering discipline."
   />
   <meta property="og:title" content="Ishita Rai | AI Engineer, HCI, Production Systems" />
   <meta
@@ -471,6 +471,16 @@
       gap: 18px;
     }
 
+    .selected-work {
+      margin-top: 34px;
+    }
+
+    .selected-work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
     .panel {
       border: 2px solid var(--line);
       border-radius: var(--radius);
@@ -526,6 +536,7 @@
     }
 
     .experience-card,
+    .selected-work-card,
     .project-card,
     .skill-card,
     .education-card {
@@ -575,6 +586,7 @@
     }
 
     .experience-card h3,
+    .selected-work-card h3,
     .project-card h3,
     .skill-card h3,
     .education-card h3 {
@@ -631,6 +643,24 @@
     .project-card {
       min-height: 100%;
       background: #ffffff;
+    }
+
+    .selected-work-card {
+      padding: 18px;
+      background: #ffffff;
+      box-shadow: 5px 5px 0 var(--line);
+    }
+
+    .selected-work-card h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .selected-work-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
     }
 
     .project-card p {
@@ -816,6 +846,7 @@
       }
 
       .three-grid,
+      .selected-work-grid,
       .skills-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -880,6 +911,7 @@
       .metrics,
       .content-grid,
       .three-grid,
+      .selected-work-grid,
       .skills-grid,
       .education-grid,
       .section-header {
@@ -893,6 +925,7 @@
       .desktop-window,
       .panel,
       .experience-card,
+      .selected-work-card,
       .project-card,
       .skill-card,
       .education-card,
@@ -941,16 +974,17 @@
       <div class="hero-copy">
         <p class="eyebrow">Penn CIS MSE | ex-JPMorgan FX eTrading</p>
         <h1 id="hero-title">Ishita Rai</h1>
-        <p class="tagline">AI engineer building human-centered intelligent systems.</p>
+        <p class="tagline">AI Engineer building LLM, ML, and human-centered systems that work in production.</p>
         <p class="intro">
           I build AI-powered and user-facing systems with the discipline of production engineering and the sensitivity of HCI.
           My work spans applied ML, LLM workflows, full-stack products, and regulated financial tools where reliability,
           auditability, and user behavior all matter.
         </p>
         <div class="hero-actions" aria-label="Primary links">
-          <a class="button primary" href="Ishita_Rai_Resume_2027.pdf" target="_blank" rel="noopener">Resume</a>
-          <a class="button" href="https://github.com/ishi03" target="_blank" rel="noopener">GitHub</a>
-          <a class="button" href="https://www.linkedin.com/in/rai-ishita/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button primary" href="Ishita_Rai_Resume_2027.pdf" target="_blank" rel="noopener">View Resume</a>
+          <a class="button" href="#projects">See Projects</a>
+          <a class="button ghost" href="https://github.com/ishi03" target="_blank" rel="noopener">GitHub</a>
+          <a class="button ghost" href="https://www.linkedin.com/in/rai-ishita/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="button ghost" href="mailto:ishitar@seas.upenn.edu">Email</a>
         </div>
       </div>
@@ -969,19 +1003,49 @@
               </svg>
             </div>
             <div>
-              <h2>Intelligent products, built for people</h2>
+              <h2>AI-powered products, built for people</h2>
               <p>LLM follow-up generation, computer vision pipelines, graph ML, and interfaces shaped around actual user workflows.</p>
             </div>
           </article>
 
           <div class="metrics" aria-label="Impact metrics">
-            <div class="metric"><strong>500+</strong><span>production users supported by internal full-stack tools</span></div>
-            <div class="metric"><strong>96%</strong><span>page-load improvement from legacy UI modernization</span></div>
-            <div class="metric"><strong>100%</strong><span>adoption for a migrated trade update workflow</span></div>
-            <div class="metric"><strong>10K+</strong><span>daily order events supported across FX trading workflows</span></div>
+            <div class="metric"><strong>500+</strong> <span>production users</span></div>
+            <div class="metric"><strong>96%</strong> <span>page-load improvement</span></div>
+            <div class="metric"><strong>100%</strong> <span>adoption</span></div>
+            <div class="metric"><strong>10K+</strong> <span>daily order events</span></div>
           </div>
         </div>
       </aside>
+    </section>
+
+    <section class="selected-work" aria-labelledby="selected-ai-title">
+      <div class="section-header">
+        <div>
+          <p class="section-kicker">Selected AI Work</p>
+          <h2 class="section-title" id="selected-ai-title">Proof points for AI engineering roles.</h2>
+        </div>
+        <p class="section-lede">
+          A quick scan of LLM workflows, graph ML, and computer vision work before the detailed project cards.
+        </p>
+      </div>
+
+      <div class="selected-work-grid">
+        <article class="selected-work-card">
+          <span class="project-type ai">LLM</span>
+          <h3>LLM Adaptive Survey System</h3>
+          <p>RAG-based follow-up generation and structured response extraction.</p>
+        </article>
+        <article class="selected-work-card">
+          <span class="project-type ai">Graph ML</span>
+          <h3>Graph ML Community Detection</h3>
+          <p>Heterogeneous graph learning on large-scale author networks.</p>
+        </article>
+        <article class="selected-work-card">
+          <span class="project-type ai">Vision</span>
+          <h3>VisionNotes</h3>
+          <p>Computer vision and OCR pipeline for converting handwritten notes to LaTeX.</p>
+        </article>
+      </div>
     </section>
 
     <section class="section" id="about" aria-labelledby="about-title">
@@ -1008,7 +1072,7 @@
             interpret those decisions, and how product interfaces can create better feedback loops instead of hiding complexity.
           </p>
           <p>
-            The throughline is practical: build intelligent systems that are technically rigorous, reliable in production,
+            The throughline is practical: build AI-powered products that are technically rigorous, reliable in production,
             and usable by the people who depend on them.
           </p>
         </article>
@@ -1110,7 +1174,7 @@
           <h2 class="section-title" id="projects-title">AI, HCI, and full-stack systems.</h2>
         </div>
         <p class="section-lede">
-          A focused set of work that supports the core narrative: intelligent systems that are built carefully,
+          A focused set of work that supports the core narrative: production ML systems built carefully,
           evaluated honestly, and designed around users.
         </p>
       </div>
@@ -1127,11 +1191,14 @@
             <li>Automated transcript-to-structured-data pipelines for downstream analysis and LLM workflows.</li>
           </ul>
           <div class="stack"><span class="chip">Python</span><span class="chip">OpenAI API</span><span class="chip">RAG</span><span class="chip">LLM Evaluation</span><span class="chip">HCI</span></div>
+          <div class="project-links">
+            <span class="chip">Private / summary available on request</span>
+          </div>
         </article>
 
         <article class="project-card">
           <span class="project-type ai">Graph ML</span>
-          <h3>Heterogeneous Graph Community Detection</h3>
+          <h3>Community Detection in Large-Scale Heterogeneous Graphs</h3>
           <p class="meta">Penn CIS 5200 machine learning project</p>
           <ul>
             <li>Benchmarked graph-learning models and trained a Heterogeneous Graph Transformer for community detection in author networks.</li>
@@ -1142,34 +1209,6 @@
           <div class="project-links">
             <a class="text-link" href="https://github.com/ishi03/CIS5200_CommunityDetection" target="_blank" rel="noopener">GitHub</a>
           </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-type systems">Full-Stack Product</span>
-          <h3>Kloris PlantCare</h3>
-          <p class="meta">React Native, Expo, and Flask mobile product</p>
-          <ul>
-            <li>Architected a full-stack plant-care mobile app with reminders, camera and GPS integration, and daily care workflows.</li>
-            <li>Implemented hybrid recommendation pipelines using clustering-based and content-based models.</li>
-            <li>Used user profile, location, and weather data to improve suggestion relevance.</li>
-          </ul>
-          <div class="stack"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Flask</span><span class="chip">Recommendations</span><span class="chip">Mobile UX</span></div>
-          <div class="project-links">
-            <a class="text-link" href="https://github.com/ishi03/kloris-frontend" target="_blank" rel="noopener">Frontend</a>
-            <a class="text-link" href="https://github.com/ishi03/kloris-api" target="_blank" rel="noopener">API</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <span class="project-type systems">Operating Systems</span>
-          <h3>PennOS</h3>
-          <p class="meta">Unix-like operating system in C</p>
-          <ul>
-            <li>Implemented a Unix-like operating system with concurrency control and process management.</li>
-            <li>Built a priority-based scheduler for preemptive multitasking.</li>
-            <li>Strengthened low-level systems understanding that carries into reliable backend and infrastructure work.</li>
-          </ul>
-          <div class="stack"><span class="chip">C</span><span class="chip">Scheduling</span><span class="chip">Concurrency</span><span class="chip">OS</span></div>
         </article>
 
         <article class="project-card">
@@ -1186,6 +1225,34 @@
             <a class="text-link" href="https://github.com/ishi03/VisionNotes" target="_blank" rel="noopener">GitHub</a>
           </div>
         </article>
+
+        <article class="project-card">
+          <span class="project-type systems">Full-Stack Product</span>
+          <h3>Kloris PlantCare</h3>
+          <p class="meta">React Native, Expo, and Flask mobile product</p>
+          <ul>
+            <li>Architected a full-stack plant-care mobile app with reminders, camera and GPS integration, and daily care workflows.</li>
+            <li>Implemented hybrid recommendation pipelines using clustering-based and content-based models.</li>
+            <li>Used user profile, location, and weather data to improve suggestion relevance.</li>
+          </ul>
+          <div class="stack"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Flask</span><span class="chip">Recommendations</span><span class="chip">Mobile UX</span></div>
+          <div class="project-links">
+            <a class="text-link" href="https://github.com/ishi03/kloris-frontend" target="_blank" rel="noopener">GitHub: Frontend</a>
+            <a class="text-link" href="https://github.com/ishi03/kloris-api" target="_blank" rel="noopener">GitHub: API</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <span class="project-type systems">Operating Systems</span>
+          <h3>PennOS</h3>
+          <p class="meta">Unix-like operating system in C</p>
+          <ul>
+            <li>Implemented a Unix-like operating system with concurrency control and process management.</li>
+            <li>Built a priority-based scheduler for preemptive multitasking.</li>
+            <li>Strengthened low-level systems understanding that carries into reliable backend and infrastructure work.</li>
+          </ul>
+          <div class="stack"><span class="chip">C</span><span class="chip">Scheduling</span><span class="chip">Concurrency</span><span class="chip">OS</span></div>
+        </article>
       </div>
     </section>
 
@@ -1196,7 +1263,7 @@
           <h2 class="section-title" id="hci-title">Interfaces are part of the intelligence.</h2>
         </div>
         <p class="section-lede">
-          My HCI lens is practical: AI systems should be evaluated by whether people can understand, correct,
+          My HCI lens is practical: AI tools should be evaluated by whether people can understand, correct,
           trust, and use them in context.
         </p>
       </div>
@@ -1238,7 +1305,7 @@
           <h2 class="section-title" id="leadership-title">Technical work with people in the loop.</h2>
         </div>
         <p class="section-lede">
-          These roles reinforce the same portfolio theme: intelligent systems, teaching, community, and careful work in sensitive domains.
+          These roles reinforce the same portfolio theme: human-centered AI, teaching, community, and careful work in sensitive domains.
         </p>
       </div>
 
@@ -1310,7 +1377,7 @@
           <h2 class="section-title" id="education-title">Graduate AI plus engineering depth.</h2>
         </div>
         <p class="section-lede">
-          Coursework connects intelligent systems, computer science foundations, and user/product analysis.
+          Coursework connects AI systems, computer science foundations, and user/product analysis.
         </p>
       </div>
 
@@ -1344,12 +1411,12 @@
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-grid">
         <div>
-          <h2 id="contact-title">Let us build intelligent systems people can actually use.</h2>
+          <h2 id="contact-title">Let&rsquo;s build AI systems people can actually use.</h2>
           <p>
-            I am looking for AI engineering, HCI research engineering, and product engineering opportunities where I can
-            bring together applied ML, full-stack systems, and production-grade reliability.
+            I&rsquo;m looking for AI Engineering and product-minded Software Engineering roles where I can build reliable,
+            human-centered AI systems.
           </p>
-          <p class="meta">Philadelphia, PA | ishitar@seas.upenn.edu | +1 215-433-0710</p>
+          <p class="meta">Philadelphia, PA | ishitar@seas.upenn.edu</p>
         </div>
         <div class="inline-links" aria-label="Contact links">
           <a class="button primary" href="mailto:ishitar@seas.upenn.edu">Email</a>
